@@ -1,70 +1,80 @@
 const inquirer = require("inquirer");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+const generatePage = require("./src/page-template");
+const { writeFile, copyFile } = require("./utils/generate-site");
+
+var teamData = {
+  manager: [],
+  engineer: [],
+  intern: [],
+};
 const promptManager = () => {
-  return inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "Enter team manager's name (Required)",
-      validate: (nameInput) => {
-        if (nameInput) {
-          return true;
-        } else {
-          console.log("Please enter team manager's name!");
-          return false;
-        }
+  return inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Enter team manager's name (Required)",
+        validate: (nameInput) => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log("Please enter team manager's name!");
+            return false;
+          }
+        },
       },
-    },
-    {
-      type: "input",
-      name: "id",
-      message: "Enter manager's ID ,(Required)",
-      validate: (idInput) => {
-        if (idInput) {
-          return true;
-        } else {
-          console.log("Please enter managers ID !");
-          return false;
-        }
+      {
+        type: "input",
+        name: "id",
+        message: "Enter manager's ID ,(Required)",
+        validate: (idInput) => {
+          if (idInput) {
+            return true;
+          } else {
+            console.log("Please enter managers ID !");
+            return false;
+          }
+        },
       },
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "Enter manager's email address ,(Required)",
-      validate: (emailAddressInput) => {
-        if (emailAddressInput) {
-          return true;
-        } else {
-          console.log("Please enter managers email address!");
-          return false;
-        }
+      {
+        type: "input",
+        name: "email",
+        message: "Enter manager's email address ,(Required)",
+        validate: (emailAddressInput) => {
+          if (emailAddressInput) {
+            return true;
+          } else {
+            console.log("Please enter managers email address!");
+            return false;
+          }
+        },
       },
-    },
-    {
-      type: "input",
-      name: "office",
-      message: "Enter manager's office number ,(Required)",
-      validate: (officeNumberInput) => {
-        if (officeNumberInput) {
-          return true;
-        } else {
-          console.log("Please enter managers office number  !");
-          return false;
-        }
+      {
+        type: "input",
+        name: "office",
+        message: "Enter manager's office number ,(Required)",
+        validate: (officeNumberInput) => {
+          if (officeNumberInput) {
+            return true;
+          } else {
+            console.log("Please enter managers office number  !");
+            return false;
+          }
+        },
       },
-    },
-  ]);
+    ])
+    .then(({ name, id, email, office }) => {
+      teamData.manager.push(new Manager(name, id, email, "Manager", office));
+    });
 };
 
 const promptEmployee = () => {
-  // If there's no 'employees' array property, create one
-  //   if (!employeeData.employees) {
-  //     employeeData.employees = [];
-  //   }
-
   console.log(`
    
-  -------------     ADD A NEW EMPLOYEE      -------------------
+  ----------------     ADD A NEW EMPLOYEE      ----------------------
     
     `);
   return inquirer
@@ -104,6 +114,7 @@ const promptEmployee = () => {
       }
     });
 };
+
 const promptEngineer = () => {
   return inquirer
     .prompt([
@@ -160,8 +171,8 @@ const promptEngineer = () => {
         },
       },
     ])
-    .then((result) => {
-      console.log(result);
+    .then(({ name, id, email, github }) => {
+      teamData.engineer.push(new Engineer(name, id, email, "Engineer", github));
     });
 };
 const promptIntern = () => {
@@ -220,28 +231,28 @@ const promptIntern = () => {
         },
       },
     ])
-    .then((result) => {
-      console.log(result);
+    .then(({ name, id, email, school }) => {
+      teamData.intern.push(new Intern(name, id, email, "Intern", school));
     });
 };
-promptManager().then(promptEmployee);
-
-// .then(() => {
-//     inquirer.prompt([
-//       {
-//         type: "confirm",
-//         name: "confirmAddEmployee",
-//         message: "Would you like to enter another Employee?",
-//         default: false,
-//       },
-//     ]);
-//   })
-//   .then((result) => {
-//     console.log(result);
-//     //   employeeData.employees.push(result);
-//     if (result) {
-//       return promptEmployee();
-//     } else {
-//       return;
-//     }
-//   })
+promptManager()
+  .then(promptEmployee)
+  .then(() => {
+    console.log("-----------");
+    // console.log(teamData);
+    console.log("-----------");
+    return generatePage(teamData);
+  })
+  .then((pageHTML) => {
+    return writeFile(pageHTML);
+  })
+  .then((writeFileResponse) => {
+    console.log(writeFileResponse);
+    return copyFile();
+  })
+  .then((copyFileResponse) => {
+    console.log(copyFileResponse);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
