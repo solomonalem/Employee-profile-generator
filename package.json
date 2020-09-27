@@ -9,9 +9,6 @@
   "scripts": {
     "test": "jest"
   },
-  "jest": {
-    "collectCoverage": true
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/solomonmeresa/Employee-profile-generator.git"
