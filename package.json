@@ -9,6 +9,7 @@
   "scripts": {
     "test": "jest"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/solomonmeresa/Employee-profile-generator.git"
