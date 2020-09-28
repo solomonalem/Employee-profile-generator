@@ -1,26 +1,63 @@
-# Employee-profile-generator
+# Employee - Profile generator
 
-<!-- GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
+## Description
 
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
+Its node application that helps campanies to generate team -members profile that includes thir name, id,job title,email and depending on their role it provides information about github username,office number and school name if they are in internship program.
 
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number [NEW MANAGER]
+## Table of Contents
 
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Visuals](#visuals)
 
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu [new ENGINEER]
+## Installation
 
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu [new INTERN]
+Download or clone the repo to your local machine and install the dependencies by running 'npm install' in the terminal.After that run the app from your code editor terminal since it is a node application run 'node index.js', answer all the questions as needed.
 
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated -->
+## Usage
+
+As it is node application install all the npm dependencies required before runing the app
+
+## License
+
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
+## Contribution
+
+Fork it to your github repos ,then you can make any changes with out affecting the main source code
+
+[My Github Profile](https://github.com/solomonmeresa)
+
+## How to reach me
+
+Email : solomonmeresa8@gmail.com
+
+## Test
+
+```javascript
+👉 npm run test
+```
+
+## visuals
+
+It generates responsive app in all screen sizes
+
+### Large-screen
+
+<img src="./src/img/screenshot-1.png" alt="large-screen">
+
+### Medium-screen
+
+<img src="./src/img/screenshot-2.png" alt="large-screen">
+
+### Small-screen
+
+<img src="./src/img/screenshot-3.png" alt="large-screen">
+
+Made by solomon
+
+### ©️2020 Employee-profile generator
