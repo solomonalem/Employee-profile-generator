@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const { number } = require("yargs");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
@@ -32,7 +33,12 @@ const promptManager = () => {
         message: "Enter manager's ID ,(Required)",
         validate: (idInput) => {
           if (idInput) {
-            return true;
+            if (!isNaN(idInput)) {
+              return true;
+            } else {
+              console.log("please enter numbers only!");
+              return false;
+            }
           } else {
             console.log("Please enter managers ID !");
             return false;
@@ -137,7 +143,12 @@ const promptEngineer = () => {
         message: "Enter Engineer's ID ,(Required)",
         validate: (idInput) => {
           if (idInput) {
-            return true;
+            if (!isNaN(idInput)) {
+              return true;
+            } else {
+              console.log("please enter numbers only!");
+              return false;
+            }
           } else {
             console.log("Please enter your username!");
             return false;
@@ -197,7 +208,12 @@ const promptIntern = () => {
         message: "Enter Intern's ID ,(Required)",
         validate: (idInput) => {
           if (idInput) {
-            return true;
+            if (!isNaN(idInput)) {
+              return true;
+            } else {
+              console.log("please enter numbers only!");
+              return false;
+            }
           } else {
             console.log("Please enter intern's id!");
             return false;
@@ -238,9 +254,9 @@ const promptIntern = () => {
 promptManager()
   .then(promptEmployee)
   .then(() => {
-    console.log("-----------");
-    console.log(teamData);
-    console.log("-----------");
+    // console.log("-----------");
+    // console.log(teamData);
+    // console.log("-----------");
     return generatePage(teamData);
   })
   .then((pageHTML) => {
