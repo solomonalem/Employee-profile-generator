@@ -239,7 +239,7 @@ promptManager()
   .then(promptEmployee)
   .then(() => {
     console.log("-----------");
-    // console.log(teamData);
+    console.log(teamData);
     console.log("-----------");
     return generatePage(teamData);
   })

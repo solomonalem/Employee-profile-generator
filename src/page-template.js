@@ -13,33 +13,36 @@ const generateManager = (managerData) => {
           </div>
           <div class="card-body">
                 <p><span>ID</span> : ${id}</p>
-                <p><span>Email</span> :<a href="mailto:${email}">${email}</a></p>
-                <p><span>Office-Number</span>:${officeNumber}</p>
+                <p><span>Email</span> : <a href="mailto:${email}">${email}</a></p>
+                <p><span>Office-Number</span> : ${officeNumber}</p>
           </div>
         </div>
       `;
 };
 const generateEngineer = (engineerData) => {
-  //   const { name, id, email, jobTitle, officeNumber } = engineerData;
+  // console.log(engineerData);
   if (!engineerData) {
     return "";
   }
 
   return `
-  ${engineerData.map(({ name, id, email, jobTitle, github }) => {
-    return `<div class="card" id="">
-      <div class="card-header">
-        <h2>${name}</h2>
-        <h4><span><i class="fas fa-hard-hat"></i></span>${jobTitle}</h4>
-      </div>
-      <div class="card-body">
-            <p><span>ID</span>: ${id}</p>
-            <p><span>Email</span> :<a href="mailto:${email}">${email}</a></p>
-            <p><span>GitHub</span> :<a href="mailto:${github}">${github}</a>
-    </div>`;
-  })}
+      ${engineerData.map(({ name, id, email, jobTitle, github }) => {
+        return `
+        <div class="card" id="">
+            <div class="card-header">
+              <h2>${name}</h2>
+              <h4><span><i class="fas fa-hard-hat"></i></span>${jobTitle}</h4>
+            </div>
+            <div class="card-body">
+                  <p><span>ID</span> : ${id}</p>
+                  <p><span>Email</span> : <a href="mailto:${email}">${email}</a></p>
+                  <p><span>GitHub</span> : <a href="mailto:${github}">${github}</a>
+            </div>
+        </div>
+          `;
+      })}
         
-      `;
+  `;
 };
 const generateIntern = (internData) => {
   //   const { name, id, email, jobTitle, officeNumber } = internData;
@@ -48,19 +51,21 @@ const generateIntern = (internData) => {
   }
 
   return `
-  ${internData.map(({ name, id, email, jobTitle, school }) => {
-    return `<div class="card" id="">
-      <div class="card-header">
-        <h2>${name}</h2>
-        <h4> <span><i class="fas fa-user-graduate"></i></span>${jobTitle}</h4>
-      </div>
-      <div class="card-body">
-            <p><span>ID</span> : ${id}</p>
-            <p><span>Email</span> :<a href="mailto:${email}">${email}</a></p>
-            <p><span>School</span>:${school}</p>
-      </div>
-    </div>`;
-  })}
+        ${internData.map(({ name, id, email, jobTitle, school }) => {
+          return `<div class="card" id="">
+                      <div class="card-header">
+                        <h2>${name}</h2>
+                        <h4> <span><i class="fas fa-user-graduate"></i></span>${jobTitle}</h4>
+                      </div>
+                      <div class="card-body">
+                            <p><span>ID</span> : ${id}</p>
+                            <p><span>Email</span> : <a href="mailto:${email}">${email}</a></p>
+                            <p><span>School</span>: ${school}</p>
+                      </div>
+                  </div>
+                  
+                `;
+        })}
         
       `;
 };
@@ -88,7 +93,7 @@ module.exports = (templateData) => {
         <header>
           
             <nav class="">
-            <h1>TEAM</h1>
+            <h1>TEAM - MEMBERS</h1>
             
             </nav>
        
