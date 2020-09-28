@@ -21,6 +21,7 @@ nav h1 {
   font-size: 1.2rem;
   color: rgb(112, 219, 255);
 }
+/* ---------------        main -------------------------------------- */
 main {
   min-height: 90vh;
   padding: 1rem;
@@ -98,6 +99,7 @@ p {
   text-decoration: none;
   font-size: 0.9rem;
 }
+/* ------------------ footer  --------------------------- */
 footer {
   text-align: center;
   padding: 1rem;
