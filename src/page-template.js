@@ -9,12 +9,12 @@ const generateManager = (managerData) => {
         <div class="card" id="">
           <div class="card-header">
             <h2>${name}</h2>
-            <h4>${jobTitle}</h4>
+            <h4><span><i class="fas fa-user-tie"></i></span>${jobTitle}</h4>
           </div>
-          <div class="crd-body">
-                <p> ID : ${id}</p>
-                <p>Email : ${email}</p>
-                <p>Office-Number:${officeNumber}</p>
+          <div class="card-body">
+                <p><span>ID</span> : ${id}</p>
+                <p><span>Email</span> :<a href="mailto:${email}">${email}</a></p>
+                <p><span>Office-Number</span>:${officeNumber}</p>
           </div>
         </div>
       `;
@@ -30,13 +30,12 @@ const generateEngineer = (engineerData) => {
     return `<div class="card" id="">
       <div class="card-header">
         <h2>${name}</h2>
-        <h4>${jobTitle}</h4>
+        <h4><span><i class="fas fa-hard-hat"></i></span>${jobTitle}</h4>
       </div>
-      <div class="crd-body">
-            <p> ID : ${id}</p>
-            <p>Email : ${email}</p>
-            <p>GitHub:${github}</p>
-      </div>
+      <div class="card-body">
+            <p><span>ID</span>: ${id}</p>
+            <p><span>Email</span> :<a href="mailto:${email}">${email}</a></p>
+            <p><span>GitHub</span> :<a href="mailto:${github}">${github}</a>
     </div>`;
   })}
         
@@ -53,12 +52,12 @@ const generateIntern = (internData) => {
     return `<div class="card" id="">
       <div class="card-header">
         <h2>${name}</h2>
-        <h4>${jobTitle}</h4>
+        <h4> <span><i class="fas fa-user-graduate"></i></span>${jobTitle}</h4>
       </div>
-      <div class="crd-body">
-            <p> ID : ${id}</p>
-            <p>Email : ${email}</p>
-            <p>School:${school}</p>
+      <div class="card-body">
+            <p><span>ID</span> : ${id}</p>
+            <p><span>Email</span> :<a href="mailto:${email}">${email}</a></p>
+            <p><span>School</span>:${school}</p>
       </div>
     </div>`;
   })}

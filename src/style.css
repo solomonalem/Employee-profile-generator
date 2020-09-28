@@ -1,0 +1,109 @@
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "lato", sans-serif;
+}
+
+header {
+  background: linear-gradient(
+    207deg,
+    rgba(9, 39, 126, 1) 0%,
+    rgba(10, 5, 92, 1) 100%
+  );
+  padding: 1.3rem;
+  text-align: center;
+}
+nav h1 {
+  letter-spacing: 0.06rem;
+  font-size: 1.2rem;
+  color: rgb(112, 219, 255);
+}
+main {
+  min-height: 90vh;
+  padding: 1.5rem;
+  display: flex;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(225, 230, 241);
+}
+h1,
+h2,
+h4 {
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  color: aliceblue;
+  font-family: "open sans";
+  font-weight: lighter;
+}
+.card {
+  margin: 1rem 1rem;
+  box-shadow: 0px 0px 20px 1px rgba(18, 18, 82, 0.582);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  max-height: 15rem;
+  width: 13rem;
+}
+.card-header {
+  padding: 0.5rem 0;
+  background-color: rgb(11, 28, 107);
+  background: rgb(9, 39, 126);
+  background: linear-gradient(
+    207deg,
+    rgba(9, 39, 126, 1) 0%,
+    rgba(10, 5, 92, 1) 100%
+  );
+  padding: 0.4rem 1rem;
+}
+.card-header h2 {
+  border-radius: 0.4rem;
+
+  color: rgb(238, 238, 238);
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.06rem;
+}
+.card-header h4 {
+  border-radius: 0.4rem;
+  color: rgb(39, 38, 77);
+  color: rgb(181, 180, 199);
+  padding: 0rem 0;
+  font-size: 0.8rem;
+}
+.card-header span {
+  margin-right: 0.5rem;
+}
+.card-body {
+  padding: 1rem 1rem;
+}
+
+p {
+  background: rgb(237, 238, 247);
+  border: 1px solid rgb(199, 202, 248);
+  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.1rem;
+  color: rgb(97, 114, 190);
+  box-shadow: 0px 0px 10px 1px rgba(27, 27, 102, 0.171);
+}
+.card-body p span {
+  color: rgb(95, 95, 165);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.card-body p a {
+  color: rgb(97, 114, 190);
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  background-color: rgb(115, 132, 185);
+  color: rgb(34, 32, 61);
+  font-weight: lighter;
+}
